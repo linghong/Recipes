@@ -1,7 +1,10 @@
-<<<<<<< HEAD
 # Recipe
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.17.
+
+## Before generating app using angular-cli, first finish the following two steps: 
+1. Install newest version of nodejs. 
+2. Install newest version of angular-cli. When installing current version of angular-cli(1.0.0-beta.17), it produces one error and several warning signs, however, the installed angular-cli will still be capable of generating correct angular2 application.
 
 ## Development server
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
@@ -33,4 +36,4 @@ To get more help on the `angular-cli` use `ng --help` or go check out the [Angul
 =======
 # Recipes
 A recipe list written in Angular2
->>>>>>> 83f9fc1e38476e2bd25cdf93f255c275fdc6191f
+
