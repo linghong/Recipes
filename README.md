@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Recipe
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.17.
@@ -29,3 +30,7 @@ Run `ng github-pages:deploy` to deploy to Github Pages.
 ## Further help
 
 To get more help on the `angular-cli` use `ng --help` or go check out the [Angular-CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+=======
+# Recipes
+A recipe list written in Angular2
+>>>>>>> 83f9fc1e38476e2bd25cdf93f255c275fdc6191f
