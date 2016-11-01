@@ -2,7 +2,7 @@
 	<rb-shopping-list-add></rb-shopping-list-add>
 	<div class="col-xs-10">
   		<ul class="list-group">
-  			<a href="#" class="list-group-item" *ngFor="let item of items"> </a>
+  			<a href="#" class="list-group-item" *ngFor="let item of items">{{item.name}} ({{item.amount}}) </a>
   		</ul>
 	</div>
 </div>

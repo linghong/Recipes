@@ -8,7 +8,7 @@ export class ShoppingListService {
     getItems(){
     	return this.items;
     }
-    addItem(items: Ingredient[]){
+    addItems(items: Ingredient[]){
     	Array.prototype.push.apply(this.items, items);
     }
 }
