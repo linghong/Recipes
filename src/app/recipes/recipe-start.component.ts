@@ -3,12 +3,13 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'rb-recipe-start',
   template: `
-    <p>
-      recipe-start Works!
-    </p>
+    <h1>
+      Please selcccect recipe
+    </h1>
   `,
   styles: []
 })
+
 export class RecipeStartComponent implements OnInit {
 
   constructor() { }
