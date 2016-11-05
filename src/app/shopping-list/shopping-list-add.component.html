@@ -1,4 +1,4 @@
-<form id="shopping-list-add">
+<form id="shopping-list-add" (ngSubmit)="onSubmit(f.value)" #f='ngForm'>
 	<div class="col-sm-6 form-group">
 		<label for="item-name">Name</label>
 		<input 
@@ -18,8 +18,8 @@
 			name="amount">
 	</div>
 	<div class="col-sm-12">
-		<button class="btn btn-primary" *ngIf = "isAdd">Add Item</button>
-		<button class="btn btn-primary" *ngIf = "!isAdd">Delete Item</button>
+		<button class="btn btn-primary" *ngIf = "isAdd" [disabled]="!f.valid">Add Item</button>
+		<button class="btn btn-primary" *ngIf = "!isAdd" [disabled]="!f.valid">Delete Item</button>
 		<button class ="btn btn-primary" *ngIf = "!isAdd">Save </button>
 		<button class="btn btn-primary" *ngIf = "!isAdd">Clear</button>
 	</div>

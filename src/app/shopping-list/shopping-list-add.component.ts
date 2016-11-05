@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Ingredient } from '../shared/ingredient';
+import { ShoppingListService } from  './shopping-list.service';
 
 @Component({
   selector: 'rb-shopping-list-add',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 
 export class ShoppingListAddComponent implements OnInit {
   isAdd =true;
-  constructor() { }
+  ingredientAdded: Ingredient;
 
-  ngOnInit() {
+  constructor(private sls: ShoppingListService) { 
   }
 
+  ngOnInit() {
+	
+  }
+
+  onSubmit(inputIngredient: Ingredient){
+  	if(this.isAdd===true){
+		this.ingredientAdded = new Ingredient(inputIngredient.name, inputIngredient.amount);
+		this.sls.addItem(this.ingredientAdded);
+	}  	
+  }
 }
