@@ -1,15 +1,26 @@
 <form id="shopping-list-add">
 	<div class="col-sm-6 form-group">
 		<label for="item-name">Name</label>
-		<input   required class="form-control">
+		<input 
+			type="text"  
+			required 
+			class="form-control"
+			ngModel
+			name="name">
 	</div>
 	<div class="col-sm-3 form-group">
 		<label for="item-amount">Amount</label>
-		<input  required class="form-control">
+		<input 
+			type="text" 
+			class="form-control"
+			required
+			ngModel
+			name="amount">
 	</div>
 	<div class="col-sm-12">
-		<button class="btn btn-primary" >Add Item</button>
-		<button class="btn btn-primary" >Delete Item</button>
-		<button class="btn btn-primary" >Clear</button>
+		<button class="btn btn-primary" *ngIf = "isAdd">Add Item</button>
+		<button class="btn btn-primary" *ngIf = "!isAdd">Delete Item</button>
+		<button class ="btn btn-primary" *ngIf = "!isAdd">Save </button>
+		<button class="btn btn-primary" *ngIf = "!isAdd">Clear</button>
 	</div>
 </form>
