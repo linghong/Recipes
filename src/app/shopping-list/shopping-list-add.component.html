@@ -21,6 +21,6 @@
 		<button class="btn btn-primary" *ngIf = "isAdd" [disabled]="!f.valid">Add Item</button>
 		<button class="btn btn-primary" *ngIf = "!isAdd" [disabled]="!f.valid" (click)="onDelete()">Delete Item</button>
 		<button class ="btn btn-primary" *ngIf = "!isAdd">Save </button>
-		<button class="btn btn-primary" *ngIf = "!isAdd">Clear</button>
+		<button class="btn btn-primary" *ngIf = "!isAdd" (click)="onClear()">Clear</button>
 	</div>
 </form>
