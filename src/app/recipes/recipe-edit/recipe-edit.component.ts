@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {Subscription} from 'rxjs/Rx';
 import {RecipeService} from '../recipe.service';
@@ -7,7 +7,7 @@ import {RecipeService} from '../recipe.service';
   selector: 'rb-recipe-edit',
   templateUrl: './recipe-edit.component.html'
 })
-export class RecipeEditComponent implements OnInit {
+export class RecipeEditComponent implements OnInit, OnDestroy {
 	private recipeIndex: number;
 	private subscription: Subscription;
 
@@ -26,10 +26,13 @@ export class RecipeEditComponent implements OnInit {
   			}else{
   				isNew = true;
   			}
-  		}
-  		
+  		}		
   	)
   	
+  }
+
+  ngOnDestroy(){
+   this.subscription.unsubscribe();
   }
 
 }
