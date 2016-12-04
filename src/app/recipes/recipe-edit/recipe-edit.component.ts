@@ -10,6 +10,7 @@ import {Recipe} from '../recipe';
   selector: 'rb-recipe-edit',
   templateUrl: './recipe-edit.component.html'
 })
+
 export class RecipeEditComponent implements OnInit, OnDestroy {
 	private recipeIndex: number;
 	private subscription: Subscription;
@@ -34,20 +35,20 @@ export class RecipeEditComponent implements OnInit, OnDestroy {
   				this.isNew = true;
           this.recipe =null;
   			}
+        this.initForm();
   		}		
-  	)
-  	
+  	)  	
   }
 
   ngOnDestroy(){
    this.subscription.unsubscribe();
   }
 
-  private initForm(isNew: boolean){
-   let recipeName="";
-   let recipeContent="";
-   let imageUrl="";
-   let recipeIngredients: FormArray= new FormArray([]);
+  private initForm(){
+    let recipeName="";
+    let recipeContent="";
+    let imageUrl="";
+    let recipeIngredients: FormArray= new FormArray([]);
     
     if(!this.isNew){
       recipeName=this.recipe.name;
@@ -64,12 +65,12 @@ export class RecipeEditComponent implements OnInit, OnDestroy {
       }
    }
 
-  this.recipeForm =this.formBuilder.group({
-      name: recipeName,
-      imagePath: imageUrl,
-      description: recipeContent,
-      ingredients: recipeIngredients
-  })
+    this.recipeForm =this.formBuilder.group({
+        name: recipeName,
+        imagePath: imageUrl,
+        description: recipeContent,
+        ingredients: recipeIngredients
+    })
   }
 
 }
