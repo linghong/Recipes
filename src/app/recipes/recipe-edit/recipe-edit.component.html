@@ -1,8 +1,8 @@
 <div class="row">
 	<div class="col-xs-12">
-		<form [formGroup]="recipeForm">
+		<form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
 			<div class="col-xs-12" >
-				<button type="submit" class="btn btn-success">Save</button>
+				<button type="submit" class="btn btn-success" [disabled]="!reciprForm.valid">Save</button>
 				<a class="btn btn-success">Cancel</a>
 			</div>
 			<div class="col-xs-12 form-group" >

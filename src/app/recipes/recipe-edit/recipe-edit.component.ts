@@ -38,6 +38,15 @@ export class RecipeEditComponent implements OnInit, OnDestroy {
         this.initForm();
   		}		
   	)  	
+  }  
+
+  onSubmit(){
+   const newRecipe = this.recipeForm.value;
+   if(this.isNew){
+      this.recipeService.addRecipe(newRecipe);
+   } else{
+    this.recipeService.editRecipe(this.recipe, newRecipe);
+   }
   }
 
   ngOnDestroy(){
