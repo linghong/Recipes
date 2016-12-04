@@ -20,10 +20,8 @@
 				<label for="name">Content</label>
 				<textarea type="text" id="content" rows="6" class="form-control" formControlName="description"></textarea>
 			</div>
-			<div class="col-xs-12" >
-				<ul class="list-group" formArrayName="ingredients">
-				<div  *ngFor="let ingredient of recipeForm.controls['ingredients'].controls; let i=index">
-				<div formGroupName="{{i}}">
+			<div class="col-xs-12" formArrayName="ingredients">
+				<ul class="list-group" *ngFor="let ingredient of recipeForm.controls['ingredients'].controls; let i=index" formGroupName="{{i}}">
 					<div class="col-sm-5">
 						<input type="text" id="name" class="form-control" formControlName="name">
 					</div>
@@ -31,10 +29,10 @@
 						<input type="text" id="amount" class="form-control" formControlName="amount">
 					</div>
 					<button class="col-sm-2 btn btn-success" (click)="onRemoveIngredient(i)">X</button>
-				</div>
-				</div>
 				</ul>
 			</div>
 		</form>
 	</div>
 </div>
+
+
