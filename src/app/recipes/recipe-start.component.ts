@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'rb-recipe-start',
   template: `
     <h1>
-      Please selcccect recipe
+      Please select recipe.
     </h1>
   `,
   styles: []
