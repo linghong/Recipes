@@ -15,7 +15,7 @@ export class RecipeEditComponent implements OnInit, OnDestroy {
 	private subscription: Subscription;
   private recipe: Recipe;
   private isNew=true;
-  private recipeForm;
+  private recipeForm: FormGroup;
 
   constructor(
   	private route: ActivatedRoute,
@@ -62,11 +62,14 @@ export class RecipeEditComponent implements OnInit, OnDestroy {
           })
         );
       }
-
-      this.recipeForm =this.formBuilder.group({
-
-      })
    }
+
+  this.recipeForm =this.formBuilder.group({
+      name: recipeName,
+      imagePath: imageUrl,
+      description: recipeContent,
+      ingredients: recipeIngredients
+  })
   }
 
 }
