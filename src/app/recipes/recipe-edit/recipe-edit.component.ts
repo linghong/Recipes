@@ -50,7 +50,11 @@ export class RecipeEditComponent implements OnInit, OnDestroy {
      }
      this.navigateBack();
   }
- 
+
+  onCancel(){
+    this.navigateBack();
+  }
+
   ngOnDestroy(){
    this.subscription.unsubscribe();
   }
