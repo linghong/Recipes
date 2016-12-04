@@ -55,6 +55,11 @@ export class RecipeEditComponent implements OnInit, OnDestroy {
     this.navigateBack();
   }
 
+  onRemoveIngredient(index: number){
+  console.log(this.recipeForm.controls['ingredients']);
+    (<FormArray>this.recipeForm.controls['ingredients']).removeAt['index'];
+  }
+
   ngOnDestroy(){
    this.subscription.unsubscribe();
   }
