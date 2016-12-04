@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import {Headers, Http} from '@angular/http';
 import { Recipe } from './recipe';
 import {Ingredient} from '../shared/ingredient';
 
@@ -15,7 +16,7 @@ export class RecipeService {
         new Recipe("Shrimp Scampi Bake", "wonderful 'zip' of Dijon-style mustard", "http://images.media-allrecipes.com/userphotos/560x315/808176.jpg", [])
   ];
 
-  constructor() { 
+  constructor(private http: Http) { 
 
 	}
 
@@ -37,5 +38,13 @@ export class RecipeService {
 
   editRecipe(oldRecipe: Recipe, newRecipe: Recipe){
     this.recipes[this.recipes.indexOf(oldRecipe)]=newRecipe;
+  }
+
+  storeData(){
+    const body=JSON.stringify(this.recipes);
+    const headers = new Headers({
+      'Content-Type': 'application/json'
+    })
+    this.http.post('https://mealplan-b1aff.firebaseio.com/recipe.json', body, {headers: headers});
   }
 }
