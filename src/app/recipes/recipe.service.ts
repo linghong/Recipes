@@ -32,7 +32,7 @@ export class RecipeService {
    this.recipes.splice(this.recipes.indexOf(recipe), 1);
   }
 
-   addRecipe(newRecipe: Recipe){
+  addRecipe(newRecipe: Recipe){
     this.recipes.push(newRecipe);
   }
 
@@ -44,7 +44,8 @@ export class RecipeService {
     const body=JSON.stringify(this.recipes);
     const headers = new Headers({
       'Content-Type': 'application/json'
-    })
-    this.http.post('https://mealplan-b1aff.firebaseio.com/recipe.json', body, {headers: headers});
+    });
+    return this.http.post('https://mealplan-b1aff.firebaseio.com/recipes.json', body, {headers: headers});
   }
+
 }
