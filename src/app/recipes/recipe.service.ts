@@ -1,10 +1,12 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import {Headers, Http, Response} from '@angular/http';
 import { Recipe } from './recipe';
 import {Ingredient} from '../shared/ingredient';
+import 'rxjs/RX';
 
 @Injectable()
 export class RecipeService {
+  recipesChangingEvent = new EventEmitter<Recipe[]>();
 
 	private recipes: Recipe[]=[
         new Recipe("Mediterranean Chicken and Pasta", "Mediterranean pasta made with chicken, artichoke hearts, garlic and dried crushed oregano", "http://images.meredith.com/fitness/images/recipe/ss_R137043.jpg", [
@@ -53,6 +55,7 @@ export class RecipeService {
     .subscribe(
       (data: Recipe[])=>{
         this.recipes= data;
+        this.recipesChangingEvent.emit(this.recipes);
       }
     );
   }
