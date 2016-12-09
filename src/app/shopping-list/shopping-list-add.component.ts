@@ -18,7 +18,7 @@ export class ShoppingListAddComponent implements OnChanges {
   ngOnChanges(changes) {
   	if(changes.item.currentValue===null){
   		this.isAdd= true;
-      this.item = {name:null, amount:null};
+      this.item = {name:null, amount:null, calorie: null};
   	}else{
   		this.isAdd=false;
   	}
@@ -27,7 +27,7 @@ export class ShoppingListAddComponent implements OnChanges {
 
   onSubmit(inputIngredient: Ingredient){
     const newIngredient = new Ingredient(
-      inputIngredient.name, inputIngredient.amount);
+      inputIngredient.name, inputIngredient.amount, inputIngredient.calorie);
 
   	if(!this.isAdd){
   		this.sls.editItem(this.item, newIngredient);

@@ -56,15 +56,15 @@ export class RecipeEditComponent implements OnInit, OnDestroy {
   }
 
   onRemoveIngredient(index: number){
-  console.log(this.recipeForm.controls['ingredients']);
     (<FormArray>this.recipeForm.controls['ingredients']).removeAt(index);
   }
 
-  onAddIngredient(name: string, amount: string){
+  onAddIngredient(name: string, amount: string, calorie: string){
     (<FormArray>this.recipeForm.controls['ingredients']).push(
       new FormGroup({
           name: new FormControl(name, Validators.required),
-          amount: new FormControl(amount, [Validators.required, Validators.pattern('\\d+')])
+          amount: new FormControl(amount, [Validators.required, Validators.pattern('\\d+')]),
+          calorie: new FormControl(calorie, [Validators.required, Validators.pattern('\\d+')])
       })
     )
   }
@@ -90,8 +90,9 @@ export class RecipeEditComponent implements OnInit, OnDestroy {
       for(let i=0; i<this.recipe.ingredients.length; i++){
         recipeIngredients.push(
           new FormGroup({
-            name: new FormControl(this.recipe.ingredients[i].name), 
-            amount: new FormControl(this.recipe.ingredients[i].amount, Validators.pattern('\\d+'))
+            name: new FormControl(this.recipe.ingredients[i].name, Validators.required), 
+            amount: new FormControl(this.recipe.ingredients[i].amount, [Validators.required,Validators.pattern('\\d+')]),
+            calorie: new FormControl(this.recipe.ingredients[i].calorie, [Validators.required,Validators.pattern('\\d+')])
           })
         );
       }

@@ -10,10 +10,10 @@ export class RecipeService {
 
 	private recipes: Recipe[]=[
         new Recipe("Mediterranean Chicken and Pasta", "Mediterranean pasta made with chicken, artichoke hearts, garlic and dried crushed oregano", "http://images.meredith.com/fitness/images/recipe/ss_R137043.jpg", [
-        new Ingredient("chicken legs", 3), 
-        new Ingredient("artichoke", 2), 
-        new Ingredient("garlic", 3), 
-        new Ingredient("oregano", 1)]),
+        new Ingredient("chicken legs", 3, 100), 
+        new Ingredient("artichoke", 2, 200), 
+        new Ingredient("garlic", 3, 50), 
+        new Ingredient("oregano", 1, 60)]),
         
         new Recipe("Shrimp Scampi Bake", "wonderful 'zip' of Dijon-style mustard", "http://images.media-allrecipes.com/userphotos/560x315/808176.jpg", [])
   ];

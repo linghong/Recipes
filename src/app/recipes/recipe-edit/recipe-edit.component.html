@@ -22,23 +22,29 @@
 			</div>
 			<ul class="col-xs-12 list-group" formArrayName="ingredients" *ngFor="let ingredient of recipeForm.controls['ingredients'].controls; let i=index" >
 				<li class="col-xs-12 form-group" formGroupName="{{i}}">
-					<div class="col-sm-5">
+					<div class="col-sm-4">
 						<input type="text" id="name" class="form-control" formControlName="name">
 					</div>
-					<div class="col-sm-5">
+					<div class="col-sm-3">
 						<input type="text" id="amount" class="form-control" formControlName="amount">
+					</div>
+					<div class="col-sm-3">
+						<input type="text" id="carloie" class="form-control" formControlName="calorie">
 					</div>
 					<button class="col-sm-2 btn btn-danger" (click)="onRemoveIngredient(i)">X</button>
 				</li>
 			</ul>
 			<div class="col-xs-12 form-group">
-				<div class="col-sm-5">
+				<div class="col-sm-4">
 					<input type="text" id="name" class="form-control" #ingredientName>
 				</div>
-				<div class="col-sm-5">
+				<div class="col-sm-3">
 						<input type="text" id="amount" class="form-control" #ingredientAmount>
 				</div>
-				<button class="col-sm-2 btn btn-success" (click)="onAddIngredient(ingredientName.value, ingredientAmount.value)">+</button>
+				<div class="col-sm-3">
+					<input type="text" id="calorie" class="form-control" #ingredientCalorie>
+				</div>
+				<button class="col-sm-2 btn btn-success" (click)="onAddIngredient(ingredientName.value, ingredientAmount.value, ingredientCalorie.value)">+</button>
 			</div>
 		</form>
 	</div>	
